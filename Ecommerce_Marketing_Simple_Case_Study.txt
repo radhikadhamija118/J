@@ -1,0 +1,60 @@
+POWER BI WORKSHOP CASE STUDY: E-COMMERCE MARKETING
+Brand context: A fictional marketplace dataset inspired by Amazon/Flipkart and fashion brands such as Myntra. The rows are synthetic and are not actual company records.
+
+DATASET
+15,000 rows | 25 columns | One worksheet: Ecommerce_Data
+
+COLUMNS (plain-English guide)
+Order_ID: Unique order number.
+Order_Date: Date the order was placed.
+Customer_ID: Unique customer code.
+City / State: Customer location.
+Customer_Type: New, Returning, Loyal or High Value.
+Product_Category: Broad product group.
+Product_Name: Item purchased.
+Brand_Name: Brand associated with the item (includes familiar market brands for classroom familiarity).
+Quantity: Number of units ordered.
+Unit_Price_INR: Price per unit before discount.
+Discount_Percent: Discount percentage applied.
+Sales_Amount_INR: Sales value after discount.
+Marketing_Channel: Where the customer encountered marketing.
+Campaign_Name: Specific campaign name.
+Ad_Spend_INR: Illustrative marketing spend attached to the row.
+Ad_Impressions: Times an ad was shown.
+Ad_Clicks: Number of ad clicks.
+Orders_From_Ads: Illustrative attributed conversions.
+Device: Device used to shop.
+Payment_Method: Payment choice.
+Order_Status: Delivered, returned or cancelled.
+Return_Reason: Reason for a return, if applicable.
+Delivery_Days: Days taken to deliver.
+Customer_Rating: Customer rating from 1 to 5.
+
+CASE SCENARIO
+You are a marketing analyst for an Indian e-commerce marketplace. Management wants to know which channels and campaigns perform well, which products and brands sell most, how discounts affect sales, which customer types are valuable, and where returns or delivery delays are common.
+
+STUDENT TASKS
+1. Build KPI cards for Total Sales, Total Orders, Average Order Value, Total Ad Spend and Average Customer Rating.
+2. Show monthly sales trend.
+3. Compare sales by product category and brand.
+4. Find the top 10 products by sales.
+5. Compare sales and ad spend by marketing channel.
+6. Compare campaigns by clicks and attributed orders.
+7. Analyse discounts versus sales.
+8. Compare customer types by sales and order count.
+9. Create a city/state sales map or bar chart.
+10. Analyse order status and return reasons.
+11. Compare average delivery days by city and category.
+12. Compare ratings by brand or product category.
+13. Add slicers for date, city, category, brand, channel and customer type.
+14. Write at least three DAX measures and give three business recommendations.
+
+SUGGESTED STARTER DAX
+Total Sales = SUM(Ecommerce_Data[Sales_Amount_INR])
+Total Orders = DISTINCTCOUNT(Ecommerce_Data[Order_ID])
+Average Order Value = DIVIDE([Total Sales], [Total Orders])
+Total Ad Spend = SUM(Ecommerce_Data[Ad_Spend_INR])
+Average Rating = AVERAGE(Ecommerce_Data[Customer_Rating])
+Note: Ad_Spend_INR and Orders_From_Ads are synthetic illustrative values repeated at row level. Do not treat row-summed spend or attributed orders as audited campaign-level KPIs. For a realistic campaign ROI model, create a separate campaign summary table with campaign-date spend and attributed sales.
+
+All dataset rows are synthetic. Familiar brand names are used for learning and are not intended to represent real companies' sales, campaign or customer data.
